@@ -10,15 +10,15 @@ var myContainer = myContainerBuilder.Build();
 
 var notificationService = myContainer.Resolve<INotificationService>();
 
-
+var userService = myContainer.Resolve<UserService>();
 
 
 
 //var notificationService = new ConsoleNotification();
 
-var user1 = new User("Richard", notificationService);
+var user1 = new User("Richard");
 
-user1.ChangeUserName("Richard the Lionheart (With DI)");
+userService.ChangeUserName(user1, "Ahmad");
 
 Console.ReadLine();
 

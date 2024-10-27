@@ -8,20 +8,13 @@ namespace WithDI
 {
     public class User
     {
-        INotificationService _notificationService;
         public string UserName { get; set; }
 
-        public User(string userName, INotificationService notificationService)
+        public User(string _userName)
         {
-            _notificationService = notificationService;
-            UserName = userName;
+            UserName = _userName;
         }
-        public void ChangeUserName(string newUserName)
-        {
-            UserName = newUserName;
-            _notificationService.NotifiyUserNameChanged(this);
-        }
-
+    
         //private INotificationService _notificationService;
         //public string UserName { get; set; }
 
